@@ -44,5 +44,8 @@ downloadsRouter.delete(
     if (video) {
       await fs.unlink(video.file!);
     }
+    res.status(200).send(video);
   }
 );
+
+export { downloadsRouter };
