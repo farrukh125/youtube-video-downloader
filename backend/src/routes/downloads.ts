@@ -34,6 +34,18 @@ downloadsRouter.post(
   }
 );
 
+downloadsRouter.delete(
+  "/api/downloads/:id",
+  async (req: Request, res: Response, next: NextFunction) => {
+    const { id } = req.params;
 
+    const video = await Video.findyByIdAndDelete(id);
+
+    if (video) {
+      await fs.unlink(video.file!);
+    }
+    res.status(200).send(video);
+  }
+);
 
 export { downloadsRouter };
