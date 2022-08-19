@@ -40,7 +40,7 @@ downloadQueue.process((job, done) => {
         socket.publishEvent(Events.VIDEO_DOWNLOADED, title);
 
         console.log("Download complete");
-        
+
         const file = `${process.cwd()}/downloads/${title}.mp4`;
 
         const video = new Video({

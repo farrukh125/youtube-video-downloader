@@ -1,5 +1,5 @@
 import { Server, Socket } from "socket.io";
-import { Events } from ".utils";
+import { Events } from "./utils";
 
 export class SocketInit {
   private static _instance: SocketInit;
