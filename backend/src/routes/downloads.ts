@@ -10,6 +10,7 @@ downloadsRouter.get(
   async (req: Request, res: Response, next: NextFunction) => {
     const videos = await Video.find().sort({ createAt: -1 });
     res.status(200).send(videos);
+    // await Video.deleteMany();
   }
 );
 
@@ -17,7 +18,7 @@ downloadsRouter.get(
   "/api/downloads/:id/downloadfile",
   async (req: Request, res: Response, next: NextFunction) => {
     const { id } = req.params;
-    const video = await Video.findByIdAndDelete(id);
+    const video = await Video.findById(id);
 
     if (!video) {
       res.status(404).send("Video not found");
