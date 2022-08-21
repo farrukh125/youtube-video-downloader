@@ -1,4 +1,4 @@
-import express, { Request, Response, NextFunction, request } from "express";
+import express, { Request, Response, NextFunction } from "express";
 import fs from "fs/promises";
 import { body, validationResult } from "express-validator";
 import { downloadQueue } from "../queues/download.queue";

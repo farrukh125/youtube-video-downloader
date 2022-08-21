@@ -2,7 +2,7 @@ import { config } from "dotenv";
 config();
 import http from "http";
 import express, { Request, Response } from "express";
-import { Server, Socket } from "socket.io";
+import { Server} from "socket.io";
 import mongoose from "mongoose";
 import cors from "cors";
 import path from "path";
